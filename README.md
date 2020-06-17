@@ -106,7 +106,7 @@ rails s
 * Run the tests
 
 ```sh
-rspec spec
+rspec
 ```
 
 ## Config ngrok and Webhooks
