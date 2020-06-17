@@ -8,7 +8,7 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 |:---|:--:|:----------|:---:|:-----:|
 |`pk`|int|ID of a event|unique,   read only|-|
 |`action`|str|Action of a event|required|-|
-|`number`|str|Number of a event|required|-|
+|`number`|int|Number of a event|required|-|
 |`created_at`|datetime|Moment when event is created|read only|-|
 |`updated_at`|datetime|Moment when event is updated|read only|-|
 
