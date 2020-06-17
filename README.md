@@ -56,7 +56,7 @@ CRUD implementation of events, available in /events/ resource.
 ### Create event
 
 **Request:**
-> GET /events
+> POST /events
 
 **Response:**
 
