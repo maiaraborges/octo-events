@@ -24,7 +24,7 @@ CRUD implementation of events, available in /events/ resource.
 |`/issues/:number/events`|`GET`|200|Get a event object|
 |`/events`|`POST`|201|Create a event|
 
-## List all events
+### List all events
 
 **Request:**
 > GET /events
@@ -39,7 +39,7 @@ CRUD implementation of events, available in /events/ resource.
 ]
 ```
 
-## Search event by number
+### Search event by number
 
 **Request:**
 > GET /issues/6/events
@@ -53,7 +53,7 @@ CRUD implementation of events, available in /events/ resource.
 ]
 ```
 
-## Create event
+### Create event
 
 **Request:**
 > GET /events
