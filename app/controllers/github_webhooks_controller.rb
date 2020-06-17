@@ -8,7 +8,7 @@ class GithubWebhooksController < ApplicationController
     if @event.save
       render json: @event, status: :created
     else
-      render json: @event.erros, status: :bad_request
+      render json: @event.errors, status: :bad_request
     end
   end
 

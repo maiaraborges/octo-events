@@ -4,6 +4,8 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 
 ## Events Resource
 
+CRUD implementation of events, available in /events/ resource.
+
 ### Events entity
 
 |Field|Type|Description|Rules|Default|
@@ -22,6 +24,47 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 |`/issues/:number/events`|`GET`|200|Get a event object|
 |`/events`|`POST`|201|Create a event|
 
+## List all events
+
+**Request:**
+> GET /events
+
+**Response:**
+
+> 200 OK
+```javascript
+[ 
+  {"id":11,"action":"edited","number":7,"created_at":"2020-06-17T16:05:36.000Z","updated_at":"2020-06-17T16:05:36.000Z"},
+  {"id":12,"action":"edited","number":6,"created_at":"2020-06-17T16:35:21.000Z","updated_at":"2020-06-17T16:35:21.000Z"}
+]
+```
+
+## Search event by number
+
+**Request:**
+> GET /issues/6/events
+
+**Response:**
+
+> 200 OK
+```javascript
+[ 
+  { "action": "edited", created_at: "2020-06-17T16:35:21.000Z"}
+]
+```
+
+## Create event
+
+**Request:**
+> GET /events
+
+**Response:**
+
+> 201 OK
+```javascript
+  {"id":11,"action":"edited","number":7,"created_at":"2020-06-17T16:05:36.000Z","updated_at":"2020-06-17T16:05:36.000Z"}
+```
+
 ## Testing specification
 
 - **`should be able to create a new event`**: application must allow a event to be created and return a json with the created project.
@@ -31,8 +74,6 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 - **`should be able to find events by number`**: application should allow searches with events number and return a json.
 
 - **`should be able generate errors when trying to search for an unregistered events by number`**: application should not allow searches with number of events that do not exist.
-
-![alt text](imgs/test.png)
 
 ## Local use
 
@@ -66,12 +107,6 @@ rails s
 rspec spec
 ```
 
-## Gem used
-
-* gem 'github_webhook', '~> 1.1'
-* gem 'rspec-rails', '~> 4.0.0'
-* gem 'dotenv-rails'
-
 ## Config ngrok and Webhooks
 
 * Install ngrok (https://ngrok.com/)
@@ -85,3 +120,9 @@ $ sudo ngrok http 3000
 * Configure Webhooks in the repository
 
 ![alt text](imgs/confing_webhooks.png)
+
+## Gem used
+
+* gem 'github_webhook'
+* gem 'rspec-rails'
+* gem 'dotenv-rails'

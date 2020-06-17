@@ -17,10 +17,5 @@ class EventsController < ApplicationController
       render json: @event, only: [:action, :created_at], status: :ok
     end
   end
-
-  private
-
-    def event_params
-      params.require(:event).permit(:action, :number)
-    end
+  
 end
