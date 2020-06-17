@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
+  resource :github_webhooks, only: :create, defaults: { formats: :json }, path: '/events'
   get "/events", to:'events#index'
-  post "/events", to:'events#create'
   get "/issues/:number/events", to:'events#issues'
 end

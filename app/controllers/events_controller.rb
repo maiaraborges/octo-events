@@ -18,19 +18,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # POST /events
-  def create
-    @event = Event.new(number: params["issue"]["number"], 
-                        action: params["event"]["action"])
-
-    if @event.save
-      render json: @event, status: :created
-    else
-      render json: @planet.erros, status: :bad_request
-    end
-  end
-
   private
+
     def event_params
       params.require(:event).permit(:action, :number)
     end

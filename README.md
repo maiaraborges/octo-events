@@ -2,13 +2,15 @@
 
 Octo Events is an application that listens to Github Events via webhooks and expose by an api for later use.
 
+## Events Resource
+
 ### Events entity
 
 |Field|Type|Description|Rules|Default|
 |:---|:--:|:----------|:---:|:-----:|
-|`pk`|int|ID of a event|unique,   read only|-|
+|`id`|int|ID of a event|unique,   read only|-|
 |`action`|str|Action of a event|required|-|
-|`number`|str|Number of a event|required|-|
+|`number`|int|Number of a event|required|-|
 |`created_at`|datetime|Moment when event is created|read only|-|
 |`updated_at`|datetime|Moment when event is updated|read only|-|
 
@@ -20,7 +22,7 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 |`/issues/:number/events`|`GET`|200|Get a event object|
 |`/events`|`POST`|201|Create a event|
 
-### Testing specification
+## Testing specification
 
 - **`should be able to create a new event`**: application must allow a event to be created and return a json with the created project.
 
@@ -32,7 +34,7 @@ Octo Events is an application that listens to Github Events via webhooks and exp
 
 ![alt text](imgs/test.png)
 
-### Local use
+## Local use
 
 * Install the gem
 
@@ -63,9 +65,16 @@ rails s
 ```sh
 rspec spec
 ```
-### Config ngrok and Webhooks
 
-* Install (https://ngrok.com/)
+## Gem used
+
+* gem 'github_webhook', '~> 1.1'
+* gem 'rspec-rails', '~> 4.0.0'
+* gem 'dotenv-rails'
+
+## Config ngrok and Webhooks
+
+* Install ngrok (https://ngrok.com/)
 
 * Start a HTTP tunnel forwarding to your local port 3000
 
