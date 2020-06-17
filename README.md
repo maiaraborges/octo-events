@@ -60,7 +60,7 @@ CRUD implementation of events, available in /events/ resource.
 
 **Response:**
 
-> 201 OK
+> 201 Created
 ```javascript
   {"id":11,"action":"edited","number":7,"created_at":"2020-06-17T16:05:36.000Z","updated_at":"2020-06-17T16:05:36.000Z"}
 ```
